@@ -111,7 +111,6 @@ public class KonaBessCore {
     private static void getRealBootImage(Context context) throws IOException {
         Process process = new ProcessBuilder("su").redirectErrorStream(true).start();
         OutputStreamWriter outputStreamWriter = new OutputStreamWriter((process.getOutputStream()));
-        Log.e("-->", getCurrent("slot"));
         BufferedReader bufferedReader =
                 new BufferedReader(new InputStreamReader(process.getInputStream()));
         outputStreamWriter.write("dd if=/dev/block/bootdevice/by-name/boot" + getCurrent("slot") + " of=" + context.getFilesDir().getAbsolutePath() + "/boot.img\n");
@@ -134,9 +133,6 @@ public class KonaBessCore {
 
     private static void getVendorBootImage(Context context) throws IOException {
         Process process = new ProcessBuilder("su").redirectErrorStream(true).start();
-        Log.e("-->", getCurrent("slot"));
-        Log.e("-->", "dd if=/dev/block/bootdevice/by-name/vendor_boot" + getCurrent(
-                "slot") + " of=" + context.getFilesDir().getAbsolutePath() + "/boot.img\n");
         OutputStreamWriter outputStreamWriter = new OutputStreamWriter((process.getOutputStream()));
         BufferedReader bufferedReader =
                 new BufferedReader(new InputStreamReader(process.getInputStream()));
