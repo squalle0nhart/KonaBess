@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Environment;
 import android.os.SystemProperties;
+import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -99,17 +100,18 @@ public class KonaBessCore {
 
     public static void getBootImage(Context context) throws IOException {
         try {
-            getVendorBootImage(context);
-            boot_name = "vendor_boot";
-        } catch (Exception e) {
             getRealBootImage(context);
             boot_name = "boot";
+        } catch (Exception e) {
+//            getRealBootImage(context);
+//            boot_name = "boot";
         }
     }
 
     private static void getRealBootImage(Context context) throws IOException {
         Process process = new ProcessBuilder("su").redirectErrorStream(true).start();
         OutputStreamWriter outputStreamWriter = new OutputStreamWriter((process.getOutputStream()));
+        Log.e("-->", getCurrent("slot"));
         BufferedReader bufferedReader =
                 new BufferedReader(new InputStreamReader(process.getInputStream()));
         outputStreamWriter.write("dd if=/dev/block/bootdevice/by-name/boot" + getCurrent("slot") + " of=" + context.getFilesDir().getAbsolutePath() + "/boot.img\n");
@@ -132,6 +134,9 @@ public class KonaBessCore {
 
     private static void getVendorBootImage(Context context) throws IOException {
         Process process = new ProcessBuilder("su").redirectErrorStream(true).start();
+        Log.e("-->", getCurrent("slot"));
+        Log.e("-->", "dd if=/dev/block/bootdevice/by-name/vendor_boot" + getCurrent(
+                "slot") + " of=" + context.getFilesDir().getAbsolutePath() + "/boot.img\n");
         OutputStreamWriter outputStreamWriter = new OutputStreamWriter((process.getOutputStream()));
         BufferedReader bufferedReader =
                 new BufferedReader(new InputStreamReader(process.getInputStream()));
@@ -197,8 +202,8 @@ public class KonaBessCore {
         dtbs = new ArrayList<>();
         for (int i = 0; i < dtb_num; i++) {
             if (checkChip(context, i, "kona v2.1")
-                    || KonaBessCore.getCurrent("device").equals("OP4A79") && checkChip(context, i
-                    , "kona v2")) {
+                    || checkChip(context, i
+                    , "kona-iot v2")) {
                 dtb dtb = new dtb();
                 dtb.id = i;
                 dtb.type = checkSingleBin(context, i) ? ChipInfo.type.kona_singleBin :
