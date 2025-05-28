@@ -1,6 +1,10 @@
 # KonaBess
 - Special Mod for Retroid Pocket Mini. Tested with Android 13 + Mini v2
 
+## Some pre-config GPU table 
+- [GPU Table](https://github.com/squalle0nhart/KonaBess-rp-mini-mod/tree/master/gpuTables)
+
+
 ### How to root your retroid pocket mini 
 https://www.reddit.com/r/retroid/comments/1hs71ho/root_the_retroid_pocket_5_with_magisk/ 
 
