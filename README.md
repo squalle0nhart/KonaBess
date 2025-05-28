@@ -1,30 +1,5 @@
 # KonaBess
-
-[中文版](https://github.com/xzr467706992/KonaBess/blob/master/README_zh-CN.md)
-
-### Supported Devices
-
-* Snapdragon 6 series:
-  * Snapdragon 690
-
-* Snapdragon 7 series:
-  * Snapdragon 750
-  * Snapdragon 765
-  * Snapdragon 778G
-  * Snapdragon 780G
-  * Snapdragon 7 Gen 1
-  * Snapdragon 7+ Gen 2
-  * Snapdragon 7+ Gen 3
-
-* Snapdragon 8 series:
-  * Snapdragon 855
-  * Snapdragon 865
-  * Snapdragon 888
-  * Snapdragon 8 Gen 1
-  * Snapdragon 8+ Gen 1
-  * Snapdragon 8 Gen 2
-  * Snapdragon 8 Gen 3
-  * Snapdragon 8s Gen 3
+- Special Mod for Retroid Pocket Mini. Tested with Android 13 + Mini v2
 
 
 ### Overview
