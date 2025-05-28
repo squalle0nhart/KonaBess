@@ -1,3 +1,7 @@
+⚠️DISCLAIMER ⚠️
+I am not responsible for any damage to your device, including but not limited to bricks, bootloops, data loss, or nuclear war.
+
+
 # KonaBess
 - Special Mod for Retroid Pocket Mini. Tested with Android 13 + Mini v2
 
@@ -8,7 +12,7 @@
 ### How to root your retroid pocket mini 
 https://www.reddit.com/r/retroid/comments/1hs71ho/root_the_retroid_pocket_5_with_magisk/ 
 
-This tutorial is for RP5 but it should work for Flip2 and Rp Mini Android 13 too. Ha
+This tutorial is for RP5 but it should work for Flip2 and Rp Mini Android 13 too.
 
 ### Overview
 
